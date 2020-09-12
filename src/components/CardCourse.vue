@@ -6,7 +6,8 @@
           <img :src="item.img" class="card-img-top p-2 imgCourse" alt="item.name">
           <div class="card-body">
             <h5 class="card-title font-weight-bold text-center py-3">{{item.nombreCurso}}</h5>
-            <h6 class="text-center">{{item.duracion}} horas</h6>
+            <h6 class="text-center">Duración: {{item.duracion}} horas</h6>
+            <h6 class="text-center">Precio: <span class="font-weight-bold">10 US$</span></h6>
            <div class="d-flex align-items-end justify-content-around mt-4">
               <!-- Botón Agregar a favoritos-->
               <button type="button" class="btn btn-outline-danger" @click="addFavorite(item)">
