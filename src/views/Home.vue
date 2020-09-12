@@ -1,18 +1,23 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <CardCourse/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import CardCourse from '@/components/CardCourse.vue';
+import { conectionApi } from '@/config/configApi';
+
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    CardCourse
+  },
+
+  mounted() {
+    conectionApi();
   }
 }
 </script>
