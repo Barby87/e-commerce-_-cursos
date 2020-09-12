@@ -6,12 +6,12 @@
           <img :src="item.img" class="card-img-top p-2 imgCourse" alt="item.name">
           <div class="card-body">
             <h5 class="card-title font-weight-bold text-center py-3">{{item.nombreCurso}}</h5>
-           <div class="d-flex align-items-end justify-content-around">
+            <h6 class="text-center">{{item.duracion}} horas</h6>
+           <div class="d-flex align-items-end justify-content-around mt-4">
               <!-- Botón Agregar a favoritos-->
               <button type="button" class="btn btn-outline-danger">
                 <font-awesome-icon class="icon" :icon="[ 'fas', 'heart' ]"/>
               </button>
-             
               <!-- Botón Agregar al carrito -->
               <button type="button" class="btn btn-primary">Comprar</button>
            </div>

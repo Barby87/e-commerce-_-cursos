@@ -3,7 +3,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-3 ">
         <div class="container">
             <!-- Logo que redirige a 'Home' -->
-            <router-link class="navbar-brand font-weigth-bold" to='/'><b>+Cursos</b></router-link>
+            <router-link class="navbar-brand font-weigth-bold" to='/'><b><span class="plus">+</span>Cursos</b></router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -19,7 +19,7 @@
                         <router-link class="nav-link font-weight-bold" to='/favorites'>Favoritos</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link font-weight-bold" to='/car'>Carrito</router-link>
+                        <router-link class="nav-link font-weight-bold" to='/cart'><font-awesome-icon class="icon" :icon="[ 'fas', 'cart-plus' ]"/> <span>(0)</span></router-link>
                     </li>
                 </ul>
             </div>
@@ -35,5 +35,7 @@ export default {
 </script>
 
 <style>
-
+.plus {
+    color: red;
+}
 </style>
