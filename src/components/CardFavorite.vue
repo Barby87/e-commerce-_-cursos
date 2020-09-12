@@ -46,15 +46,12 @@ export default {
         if (result.value) {
         this.$store.dispatch('deleteFavAction', index);
           Swal.fire(
-            'Deleted!',
-            'Your file has been deleted.',
+            'Curso eliminado!',
+            'Tu curso ha sido eliminado de favoritos.',
             'success'
           )
         }
       })
-      // if(confirm('¿Desea eliminar?')) {
-      //   this.$store.dispatch('deleteFavorite', index);
-      // }
     }
   }
 }

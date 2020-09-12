@@ -10,11 +10,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Importando Font Awesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 // import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
-import { faHeart, faCartPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faCartPlus, faTrash, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faHeart, faCartPlus, faTrash);
+library.add(faHeart, faCartPlus, faTrash, faTrashAlt);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false

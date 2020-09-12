@@ -6,7 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     courses: [],
-    favoritesArr: []
+    favoritesArr: [],
+    buyArr: []
   },
   getters: {
     sendingCourses(state) {
@@ -15,6 +16,10 @@ export default new Vuex.Store({
 
     sendingFavorites(state) {
       return state.favoritesArr;
+    },
+
+    sendingBuy(state) {
+      return state.buyArr;
     }
   },
 
@@ -29,6 +34,14 @@ export default new Vuex.Store({
 
     deleteFavMutation(state, index) {
       state.favoritesArr.splice(index, 1);
+    },
+
+    saveBuyMutation(state, buyReceived) {
+      state.buyArr.push(buyReceived);
+    },
+
+    deleteProductMutation(state, index) {
+      state.buyArr.splice(index, 1)
     }
   },
 
@@ -43,6 +56,14 @@ export default new Vuex.Store({
 
     deleteFavAction(context, index) {
       context.commit('deleteFavMutation', index);
+    },
+
+    saveBuyAction(context, buyReceived) {
+      context.commit('saveBuyMutation', buyReceived);
+    },
+
+    deleteProductAction(context, index) {
+      context.commit('deleteProductMutation', index);
     }
   }
 })

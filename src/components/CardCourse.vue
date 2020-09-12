@@ -13,8 +13,29 @@
                 <font-awesome-icon class="icon" :icon="[ 'fas', 'heart' ]"/>
               </button>
               <!-- Botón Agregar al carrito -->
-              <button type="button" class="btn btn-primary">Comprar</button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" :data-target="`#modal-${item.codigo}`" @click="buyCourse(item)">Comprar</button>
            </div>
+          </div>
+        </div>
+
+        <!-- Modal 'Producto agregado al carro' -->
+        <div class="modal fade" :id="`modal-${item.codigo}`" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">{{item.nombreCurso}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                El producto fue agregado al carro satisfactoriamente
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Seguir comprando</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" @click="goToCart">Ir al carro</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -36,6 +57,16 @@ export default {
     addFavorite(item) {
       // Envío la info de favorito a store
       this.$store.dispatch('saveFavAction', item);
+    },
+
+    buyCourse(item) {
+      // Envío la info de compra a store
+      this.$store.dispatch('saveBuyAction', item);
+    },
+
+    goToCart() {
+      // Redireccionando al carro
+      this.$router.push('/cart');
     }
   }
 }

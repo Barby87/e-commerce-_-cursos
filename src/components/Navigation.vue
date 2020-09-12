@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                    <li>
-                       <!-- Búsqueda curso -->
+                       <!-- Búsqueda de curso -->
                        <!-- <form class="form-inline my-2 my-lg-0">
                         <input class="form-control input-group mr-sm-2" type="search" placeholder="Búsqueda" aria-label="Search" v-model="searching">
                        </form> -->
@@ -19,7 +19,7 @@
                         <router-link class="nav-link font-weight-bold" to='/favorites'>Favoritos</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link font-weight-bold" to='/cart'><font-awesome-icon class="icon" :icon="[ 'fas', 'cart-plus' ]"/> <span>(0)</span></router-link>
+                        <router-link class="nav-link font-weight-bold" to='/cart'><font-awesome-icon class="icon" :icon="[ 'fas', 'cart-plus' ]"/> <span>({{bringBuy.length}})</span></router-link>
                     </li>
                 </ul>
             </div>
@@ -33,9 +33,9 @@ export default {
     name: 'Navigation',
 
     computed: {
-        // bringFav() {
-        //     return this.$store.getters.sendingFavorites.length;
-        // }
+        bringBuy() {
+            return this.$store.getters.sendingBuy;
+        }
     }
 }
 </script>
