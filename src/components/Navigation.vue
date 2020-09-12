@@ -30,7 +30,13 @@
 
 <script>
 export default {
+    name: 'Navigation',
 
+    computed: {
+        // bringFav() {
+        //     return this.$store.getters.sendingFavorites.length;
+        // }
+    }
 }
 </script>
 

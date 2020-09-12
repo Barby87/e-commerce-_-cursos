@@ -9,7 +9,7 @@
             <h6 class="text-center">{{item.duracion}} horas</h6>
            <div class="d-flex align-items-end justify-content-around mt-4">
               <!-- Botón Agregar a favoritos-->
-              <button type="button" class="btn btn-outline-danger">
+              <button type="button" class="btn btn-outline-danger" @click="addFavorite(item)">
                 <font-awesome-icon class="icon" :icon="[ 'fas', 'heart' ]"/>
               </button>
               <!-- Botón Agregar al carrito -->
@@ -29,6 +29,13 @@ export default {
   computed: {
     gettingCourses() {
       return this.$store.getters.sendingCourses;
+    }
+  },
+
+  methods: {
+    addFavorite(item) {
+      // Envío la info de favorito a store
+      this.$store.dispatch('saveFavAction', item);
     }
   }
 }
