@@ -29,7 +29,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                El producto fue agregado al carro satisfactoriamente
+                El curso fue agregado al carro satisfactoriamente
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Seguir comprando</button>

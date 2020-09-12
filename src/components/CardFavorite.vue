@@ -1,6 +1,14 @@
 <template>
     <div class="container">
-        <div class="row pt-3">
+        <div class="jumbotron text-center" v-if="bringFavorites.length == 0">
+            <h1 class="display-4"><font-awesome-icon class="icon" :icon="[ 'fas', 'heart' ]"/>!</h1>
+            <p class="lead">Aún no tienes cursos favoritos</p>
+            <hr class="my-4">
+            <p>Sigue navegando en nuestro sitio para descubrir cursos de tu interés.</p>
+            <router-link class="btn btn-primary btn-lg" to='/' role="button">Ver cursos</router-link>
+        </div>
+
+        <div class="row pt-3" v-else>
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-between" v-for="(item, index) in bringFavorites" :key="index">
                 <div class="card p-3" style="width: 18rem;">
                     <img :src="item.img" class="card-img-top imgFav" :alt="item.nombreCurso">
@@ -14,7 +22,6 @@
                             </button>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -57,7 +64,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .imgFav {
   height: 10em;
 }
