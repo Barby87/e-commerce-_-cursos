@@ -26,6 +26,10 @@ footer {
     width: 100vw;
 }
 
+.plus {
+    color: red;
+}
+
 p {
     font-size: 1.5rem;
 }
